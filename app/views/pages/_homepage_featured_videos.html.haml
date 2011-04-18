@@ -1,5 +1,5 @@
 %div
   %h2= section.title
-  %ul
+  %ul#home-featured-videos
     -for feature in features 
       =render :partial => "products/video", :locals => {:video => feature.featurable, :size => :large_thumb}
