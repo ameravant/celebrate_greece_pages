@@ -15,11 +15,10 @@
       -if section.features.any?
         = render :partial => "homepage_featured_videos.html.haml", :locals => {:features => section.features, :section => section, :size => :small} 
     %br{:style=>"clear:both;"}
--else
-  - if @page.automatically_embed_videos_and_images?
-    = ninja_parse(@page.body)
-  - else
-    = @page.body
+- if @page.automatically_embed_videos_and_images?
+  = ninja_parse(@page.body)
+- else
+  = @page.body
 - if @page.permalink == "home" and !@settings.homepage_banner.blank?
   - content_for :banner do
     = @settings.homepage_banner
